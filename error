@@ -1,0 +1,35 @@
+2025-01-09T20:17:15.334+05:30 ERROR 17556 --- [api-gateway] [ctor-http-nio-3] a.w.r.e.AbstractErrorWebExceptionHandler : [ac98d432-3]  500 Server Error for HTTP GET "/api/employees/4"
+
+java.net.UnknownHostException: Failed to resolve 'LAPTOP-UNAOVO25.mshome.net' [A(1), AAAA(28)] after 2 queries 
+	at io.netty.resolver.dns.DnsResolveContext.finishResolve(DnsResolveContext.java:1150) ~[netty-resolver-dns-4.1.116.Final.jar:4.1.116.Final]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP GET "/api/employees/4" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at io.netty.resolver.dns.DnsResolveContext.finishResolve(DnsResolveContext.java:1150) ~[netty-resolver-dns-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.resolver.dns.DnsResolveContext.tryToFinishResolve(DnsResolveContext.java:1097) ~[netty-resolver-dns-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.resolver.dns.DnsResolveContext.query(DnsResolveContext.java:455) ~[netty-resolver-dns-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.resolver.dns.DnsResolveContext.access$700(DnsResolveContext.java:70) ~[netty-resolver-dns-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.resolver.dns.DnsResolveContext$2.operationComplete(DnsResolveContext.java:524) ~[netty-resolver-dns-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.resolver.dns.DnsQueryContext.finishFailure(DnsQueryContext.java:343) ~[netty-resolver-dns-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.resolver.dns.DnsQueryContext$4.run(DnsQueryContext.java:278) ~[netty-resolver-dns-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:156) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:173) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:166) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.116.Final.jar:4.1.116.Final]
+		at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: io.netty.resolver.dns.DnsNameResolverTimeoutException: [7795: /192.168.1.1:53] DefaultDnsQuestion(LAPTOP-UNAOVO25.mshome.net. IN A) query '7795' via UDP timed out after 5000 milliseconds (no stack trace available)
+
